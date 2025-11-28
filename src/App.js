@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import MyCube from "./MyCube";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Canvas style={{ height: "100vh", width: "100vw" }}>
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[5, 5, 5]} />
+
+      <MyCube />
+
+      <OrbitControls />
+    </Canvas>
   );
 }
 
